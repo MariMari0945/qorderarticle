@@ -1,0 +1,11 @@
+# Experiment 4 (H3): gradient variance vs depth, local vs global cost, random initialisation.
+type: gradients
+name: exp4_gradients
+gradients:
+  depths: [1, 2, 3, 5, 7, 10, 15]
+  observables: [local, global]
+  n_qubits_list: [4, 6, 8, 10]
+  n_init: 200
+  n_inputs: 16
+  seed: 0
+  backend: pennylane      # 'reference' also works (NumPy, slower)

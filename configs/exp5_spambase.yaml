@@ -1,0 +1,15 @@
+# Experiment 5 (H1): tabular dataset with its original (arbitrary) column order; first 8 numeric columns.
+name: exp5_spambase
+dataset: {dataset: spambase, name: openml, version: 1}
+model:
+  kind: shallow
+  n_qubits: 8
+  observable: local
+  reupload: false
+  learning_rate: 0.05
+  batch_size: 64
+  max_steps: 1500
+  convergence_interval: 100
+grid: {n_layers: [1, 2]}
+orderings: [heuristic, heuristic_corr, default, reversed, random, anti_heuristic, kbest, default_center, heuristic_center, heuristic_mrmr]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

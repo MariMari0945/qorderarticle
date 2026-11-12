@@ -1,0 +1,18 @@
+# Experiment 3 (H2): does the heuristic's gain shrink with depth or with a global cost?
+# Light cone of Z_0 = L + 1 qubits, so L = 7 reaches all 8 qubits.
+# L = 4 and 6 added in round 3 (finer grid for the depth-needed metric); runs already done are skipped.
+name: exp3_depth_cost
+dataset: {name: breast_cancer, method: first}
+model:
+  kind: shallow
+  n_qubits: 8
+  reupload: false
+  learning_rate: 0.05
+  batch_size: 64
+  max_steps: 1500
+  convergence_interval: 100
+grid:
+  n_layers: [1, 2, 3, 4, 5, 6, 7]
+  observable: [local, global]
+orderings: [heuristic, default, reversed, random, anti_heuristic]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

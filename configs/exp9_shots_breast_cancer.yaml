@@ -1,0 +1,21 @@
+# Experiment 9 (round 4): training with gradients estimated from a finite number of shots.
+# Same circuit, initialisation, minibatch Adam and convergence rule as exp3, simulated with the
+# NumPy model (qorder.reference.ShallowShotsClassifier). shots: null = exact gradients (control,
+# same training loop). Each <O> is sampled with `shots` shots; parameter-shift derivatives get
+# Gaussian noise of variance (1 - <O>^2) / (2 shots). Test accuracy is computed exactly.
+name: exp9_shots_breast_cancer
+dataset: {name: breast_cancer, method: first}
+model:
+  kind: shallow_shots
+  n_qubits: 8
+  observable: local
+  reupload: false
+  learning_rate: 0.05
+  batch_size: 64
+  max_steps: 1500
+  convergence_interval: 100
+grid:
+  n_layers: [1, 2, 3, 4, 5, 6, 7]
+  shots: [null, 100, 10, 2]
+orderings: [heuristic, default, random]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

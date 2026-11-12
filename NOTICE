@@ -1,0 +1,13 @@
+qorder
+
+Portions of qorder/datasets.py (hidden-manifold generator, noise features) and
+qorder/models.py (DataReuploadingClassifier) are adapted from:
+
+  * QMLPerm - https://github.com/Ilmosal/QMLPerm
+    (Salmenperä, Perkkola & Nurminen, Quantum Mach. Intell. 7, 107, 2025)
+  * qml-benchmarks - https://github.com/XanaduAI/qml-benchmarks
+    Copyright 2024 Xanadu Quantum Technologies Inc.
+
+both licensed under the Apache License, Version 2.0
+(http://www.apache.org/licenses/LICENSE-2.0). Changes: ported to current
+PennyLane (qml.broadcast removed), labels mapped to {0, 1}, seeds exposed.

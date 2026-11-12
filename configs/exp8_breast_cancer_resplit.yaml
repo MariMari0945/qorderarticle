@@ -1,0 +1,13 @@
+# Experiment 8 (H1, round 3): same as exp2_breast_cancer_shallow.yaml, but seed s also draws its own
+# train/test split (resplit), so the tests include the variability of the data split.
+# Round 4: cone_reversed / cone_random keep the heuristic's L+1 features inside the light cone but
+# change their order within it (position vs. selection). Runs already done are skipped.
+name: exp8_breast_cancer_resplit
+dataset: {name: breast_cancer, method: first}
+model: {kind: shallow, n_qubits: 8, observable: local, reupload: false, learning_rate: 0.05,
+  batch_size: 64, max_steps: 1500, convergence_interval: 100}
+grid:
+  n_layers: [1, 2]
+orderings: [heuristic, default, reversed, random, cone_reversed, cone_random]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+resplit: true

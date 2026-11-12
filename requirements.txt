@@ -1,0 +1,19 @@
+# Simulation and training
+# Pinned to a combination known to import together (newer JAX can break PennyLane's import).
+pennylane==0.42.*
+jax==0.6.2
+jaxlib==0.6.2
+optax==0.2.5
+# Data / analysis
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.4
+pandas>=2.0
+matplotlib>=3.8
+pyyaml>=6.0
+# Noisy simulation and IBM hardware validation
+qiskit>=2.3
+qiskit-aer>=0.17
+qiskit-ibm-runtime>=0.48,<0.51   # 0.50 deprecates SamplerV2 (still works)
+# Tests
+pytest>=8

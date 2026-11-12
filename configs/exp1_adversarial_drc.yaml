@@ -1,0 +1,16 @@
+# Experiment 1 (H1): Salmenperä et al. adversarial permutation dataset with their model.
+# 10 hidden-manifold features + 10 Gaussian noise features = 20 features -> 7 qubits (3 features/qubit),
+# single observable (Z on qubit 0), block entanglement. Hyper-parameters as in QMLPerm's run_adv_perm_experiment.
+name: exp1_adversarial_drc
+dataset: {name: adversarial, dimension: 10, manifold_dimension: 6, n_train: 300, n_test: 300, seed: 1234}
+model:
+  kind: drc
+  observable_type: single
+  entangling_layer: block
+  n_layers: 10
+  learning_rate: 0.01
+  batch_size: 32
+  max_steps: 10000
+  convergence_interval: 600
+orderings: [heuristic, heuristic_corr, default, swapped, every_other, reversed, random, anti_heuristic, heuristic_mrmr]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

@@ -1,0 +1,16 @@
+# Experiment 2 (H1): 8-qubit shallow circuit, local cost, real data.
+# Note: with PCA the 'default' order is already sorted by explained variance (see README).
+name: exp2_fashion_shallow
+dataset: {name: fashion, classes: [0, 6], n_components: 8, n_train: 1000, n_test: 1000}
+model:
+  kind: shallow
+  n_qubits: 8
+  observable: local
+  reupload: false
+  learning_rate: 0.05
+  batch_size: 64
+  max_steps: 1500
+  convergence_interval: 100
+grid: {n_layers: [1, 2, 3]}
+orderings: [heuristic, heuristic_corr, default, reversed, random, anti_heuristic]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

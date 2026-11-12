@@ -1,0 +1,15 @@
+# Experiment 7 (H1, estimator): adversarial dataset with more training samples (1000 instead of 300),
+# to test whether the mutual-information estimate - and so the heuristic - improves with data.
+name: exp7_adversarial_n1000
+dataset: {name: adversarial, dimension: 10, manifold_dimension: 6, n_train: 1000, n_test: 300, seed: 1234}
+model:
+  kind: drc
+  observable_type: single
+  entangling_layer: block
+  n_layers: 10
+  learning_rate: 0.01
+  batch_size: 32
+  max_steps: 10000
+  convergence_interval: 600
+orderings: [heuristic, heuristic_corr, default, random, heuristic_mrmr]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
