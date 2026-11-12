@@ -47,7 +47,7 @@ The pins in `requirements.txt` (PennyLane 0.42 + JAX 0.6.2) are a combination kn
 
 | Config | Hypothesis | Description |
 |---|---|---|
-| `exp0_smoke_offline` | - | Pipeline check with the NumPy simulator and scikit-learn `digits` |
+| `exp0_smoke_offline` | None (smoke test) | Pipeline check with the NumPy simulator and scikit-learn `digits` |
 | `exp1_adversarial_drc`, `exp7_adversarial_n1000` | H1 | Model and adversarial dataset of Salmenperä et al. (10 informative + 10 noise features), with 300 and 1000 training samples |
 | `exp2_{mnist,fashion,breast_cancer}_shallow` | H1 | 8-qubit shallow circuit with local cost, L = 1, 2, 3 |
 | `exp5_*`, `exp6_*_shuffled` | H1 | Tabular datasets in their original column order and PCA components in a fixed random order |
